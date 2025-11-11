@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickCart - Your Fastest Shopping Hub</title>
+  <link href="../Css/Quickcart.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>🛒QuickCart</h1>
+    <!-- Hamburger menu button -->
+    <button id="nav-toggle" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+    <!-- Navigation menu -->
+    <nav id="site-nav">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Deals</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>  <section class="hero">
+    <h2>Welcome to QuickCart 🛒</h2>
+    <p>Your fastest, easiest and smartest way to shop everything you love!</p>
+  </section>  <section class="products">
+    <div class="card">
+      <img src="/images/laptops2.png" alt="Product" />
+      <div class="card-body">
+        <h3>Laptops</h3>
+        <p>Lightweight, powerful, and ready to go with you anywhere.</p>
+        <div class="price">$</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/images/smartphone2.png" alt="Product" />
+      <div class="card-body">
+        <h3>Smartphones</h3>
+        <p>Capture your world in stunning detail. Blazing fast.</p>
+        <div class="price">$</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/images/headphones.png" alt="Product" />
+      <div class="card-body">
+        <h3>Headphones</h3>
+        <p>Pure sound. No distractions. All day battery life.</p>
+        <div class="price">$</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/images/smart watch.png" alt="Product" />
+      <div class="card-body">
+        <h3>Smart Watch</h3>
+        <p>Track your fitness, get notifications, and look good doing it.</p>
+        <div class="price">$</div>
+      </div>
+    </div>
+  </section>  <footer class="footer">
+    <p>© 2025 QuickCart Inc.</p>
+    <p>Shop smart. Shop quick. Shop QuickCart.</p>
+  </footer>
+
+  <!-- Hamburger menu JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('nav-toggle');
+      const nav = document.getElementById('site-nav');
+      
+      if (!btn || !nav) return;
+
+      // Toggle menu when hamburger is clicked
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        nav.classList.toggle('open');
+      });
+
+      // Close menu when clicking a link (better mobile UX)
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('open');
+        }
+      });
+
+      // Close menu when clicking outside (optional)
+      document.addEventListener('click', (e) => {
+        if (!header.contains(e.target) && nav.classList.contains('open')) {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('open');
+        }
+      });
+
+      // Handle escape key to close menu (accessibility)
+      document.addEventListener('keyup', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
