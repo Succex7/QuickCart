@@ -15,4 +15,4 @@ The page features a hamburger navigation menu on smaller screens for a clean and
 - CSS3 - styling and responsive layout
 - JavaScript (Vanilla JS) - interactive hamburger menu
 
-**Live Demo** [Visit QuickCart live demo]()
+**Live Demo** [Visit QuickCart live demo](https://quickcarte-commerce.netlify.app/)
